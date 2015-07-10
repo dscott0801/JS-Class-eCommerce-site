@@ -41,11 +41,15 @@ $(document).ready(function(){
 		var i=$(this).children().first().html();
 		shoppingCart.push(prodList[i]); //test code
 		//console.log(prodList[i].name);
-	});
 
+		shoppingCart.forEach(function(ele, index){
+			$("#cartProd").append("<div class='col-md-12'><div class='row'><div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div></div></div>");
+		});
+	});
+/*
 	(shoppingCart.forEach(function(ele, index){
 		$("#cartProd").append("<div class='col-md-12'><div class='row'><div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div></div></div>");
-	}));
+	}));*/
 
 });
 /*
