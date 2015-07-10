@@ -63,7 +63,12 @@ div.carousel-inner {
 	height: 300px;
 }
 
-
+/******************
+  PRODUCT DISPLAY
+******************/
+.prodIndex{
+	display: none;
+}
 
 /******************
 	THUMBNAILS

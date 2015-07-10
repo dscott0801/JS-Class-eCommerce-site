@@ -18,7 +18,7 @@ var prodList=[
 	},
 	{"name": "Blouse",
 	 "price": "$18.99",
-	 "pic": "'img/shoes.jpg'",
+	 "pic": "'img/blouse.jpg'",
 	 "description":"Women&#39s Blouse"
 	},
 	{"name": "Jeans",
@@ -28,10 +28,39 @@ var prodList=[
 	}
 ]
 
+var shoppingCart=[]
+
 $(document).ready(function(){
-	//e.preventDefault();
 	(prodList.forEach(function(ele, index){
 		//feel free to style the div that I added here.
-		$("#prod").append("<div class='col-sm-4 col-lg-4 col-md-4'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div></div></div>");
+		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div></div></div>");
 	}));
+
+	$(".prodDisplay").click(function(e){
+		e.preventDefault();
+		var i=$(this).children().first().html();
+		shoppingCart.push(prodList[i]); //test code
+		//console.log(prodList[i].name);
+	});
+
+	(shoppingCart.forEach(function(ele, index){
+		$("#cartProd").append("<div class='col-md-12'><div class='row'><div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div></div></div>");
+	}));
+
 });
+/*
+<div class='col-md-12'>
+                <div class='row'>
+                    <div class='col-sm-4 col-lg-4 col-md-4 cart-item'>
+                        <div class='thumbnail'>
+                            <img src="+ele.pic+">
+                                <div class='caption'>
+                                    <h4 class='pull-right'>"+ele.price+"</h4>
+                                    <h4>"+ele.name+"</h4>
+                                </div>
+                            <span class='cart-item-close'>X</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+*/
