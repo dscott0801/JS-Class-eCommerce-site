@@ -33,7 +33,9 @@ var shoppingCart=[]
 $(document).ready(function(){
 	(prodList.forEach(function(ele, index){
 		//feel free to style the div that I added here.
-		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div></div></div>");
+		var overlay = "<div class='overlay'><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4><p>"+ele.description+"</p><button type='button' class='btn btn-primary addToCart'>Add to Cart</button></div></div>";
+		
+		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p>"+overlay+"<div class='thumbnail'><img src="+ele.pic+"></div></div>");
 	}));
 
 	$(".prodDisplay").click(function(e){
@@ -43,7 +45,7 @@ $(document).ready(function(){
 		//console.log(prodList[i].name);
 
 		shoppingCart.forEach(function(ele, index){
-			$("#cartProd").append("<div class='col-md-12'><div class='row'><div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div></div></div>");
+			$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div>");
 		});
 	});
 /*
