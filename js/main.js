@@ -68,3 +68,8 @@ $(document).ready(function(){
                 </div>
             </div>
 */
+//login
+
+$('#toggle-in').click(function(){
+  $('#login').toggle();
+});
