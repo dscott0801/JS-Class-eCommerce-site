@@ -35,12 +35,29 @@ $(document).ready(function(){
 		//feel free to style the div that I added here.
 		var overlay = "<div class='overlay'><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4><p>"+ele.description+"</p><button type='button' class='btn btn-primary addToCart'>Add to Cart</button></div></div>";
 		
-		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p>"+overlay+"<div class='thumbnail'><img src="+ele.pic+"></div></div>");
+		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p>"+overlay+"<div class='thumbnail'><img src="+ele.pic+"><div class='caption caption-hide'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4><p>"+ele.description+"</p><button type='button' class='btn btn-primary addToCart'>Add to Cart</button></div></div></div>");
 	}));
 
-	$(".prodDisplay").click(function(e){
+	$(".prodDisplay button").click(function(e){
 		e.preventDefault();
-		var i=$(this).children().first().html();
+		if ($(window).width() < 1024) {
+		
+			var i=$(this).closest(".thumbnail").siblings("p.prodIndex").html();
+			//console.log(i);
+			shoppingCart.push(prodList[i]); //test code
+			//console.log(prodList[i].name);
+
+			shoppingCart.forEach(function(ele, index){
+				$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+ele.pic+"><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4></div><span class='cart-item-close'>X</span></div></div>");
+			});
+		}
+	});
+
+	$(".prodDisplay .overlay button").click(function(e){
+		e.preventDefault();
+			
+		var i=$(this).closest(".overlay").siblings("p.prodIndex").html();
+		//console.log(i);
 		shoppingCart.push(prodList[i]); //test code
 		//console.log(prodList[i].name);
 
