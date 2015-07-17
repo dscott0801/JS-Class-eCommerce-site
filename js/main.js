@@ -51,7 +51,7 @@ $(document).ready(function(){
 		//feel free to style the div that I added here.
 		var overlay = "<div class='overlay'><div class='caption'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4><p>"+ele.description+"</p><button type='button' class='btn btn-primary addToCart'>Add to Cart</button></div></div>";
 		
-		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p>"+overlay+"<div class='thumbnail'><img src="+ele.pic+"></div></div>");
+		$("#prod").append("<div class='prodDisplay col-sm-4 col-lg-4 col-md-4'><p class='prodIndex'>"+index+"</p>"+overlay+"<div class='thumbnail'><img src="+ele.pic+"><div class='caption caption-hide'><h4 class='pull-right'>"+ele.price+"</h4><h4>"+ele.name+"</h4><p>"+ele.description+"</p><button type='button' class='btn btn-primary addToCart'>Add to Cart</button></div></div></div>");
 	}));
 
 	//add a product to the shopping cart
