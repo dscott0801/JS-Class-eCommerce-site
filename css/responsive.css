@@ -26,4 +26,8 @@
 	.prodDisplay:hover .overlay {
 		opacity: 1;
 	}
+
+	.btn.btn-danger.clear-all {
+	float: right;
+}
 }

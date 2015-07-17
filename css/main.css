@@ -66,6 +66,14 @@ button .cart-item-close {
 	visibility: hidden;
 }
 
+.cartClear {
+	margin-left: -15px;
+}
+
+.clearAll {
+	float: right;
+}
+
 /******************
 	CAROUSEL
 ******************/
