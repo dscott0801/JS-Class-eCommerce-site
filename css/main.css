@@ -83,6 +83,17 @@ div.carousel-inner {
 /******************
 	LOGIN
 ******************/
+*{margin:0;padding:0;}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+
+body{
+	position:relative;
+}
 
 .nav2{
 	float:right;
@@ -111,7 +122,32 @@ div.carousel-inner {
   
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
-*{margin:0;padding:0;}
+
+
+
+
+/* overlay styles, all needed */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+
+.modal {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -150px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11; 
+}
 
 #login{
   width:400px;
@@ -120,6 +156,7 @@ div.carousel-inner {
   margin-bottom:2%;
   transition:opacity 1s;
   -webkit-transition:opacity 1s;
+
 }
 
 
@@ -156,3 +193,13 @@ input[type="submit"]{
 input[type="submit"]:hover{
   background:#2288bb;
 }
+
+#close{
+    padding: .3em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50em;
+    margin: 2em 2em;
+    color:#fff;
+    background-color:#1E90FF;
+    text-decoration:none;
+  }

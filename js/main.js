@@ -73,3 +73,16 @@ $(document).ready(function(){
 $('#toggle-in').click(function(){
   $('#login').toggle();
 });
+
+$('#toggle-in').click(function(){
+  $('#overlay').toggle();
+});
+
+$('#close').click(function(){
+  $('#login').toggle();
+});
+
+$('#close').click(function(){
+  $('#overlay').toggle();
+});
+
