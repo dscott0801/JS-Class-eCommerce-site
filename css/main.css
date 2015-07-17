@@ -61,6 +61,17 @@ button .cart-item-close {
 	visibility: hidden;
 }
 
+.shopping-cart .lead{
+	color:white;
+	float:left;
+	padding-right: 3%;
+}
+
+.shopping-cart .button{
+	display:inline;
+	float: left;
+}
+
 /******************
 	CAROUSEL
 ******************/
