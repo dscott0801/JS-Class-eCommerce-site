@@ -55,15 +55,30 @@ $(document).ready(function(){
 	}));
 
 	//add a product to the shopping cart
-	$(".prodDisplay").click(function(e){
+	$(".prodDisplay button").click(function(e){
 		e.preventDefault();
-		var i=$(this).children().first().html();
+		if ($(window).width() < 1024) {
+			var i=$(this).closest(".thumbnail").siblings("p.prodIndex").html();
+			shoppingCart.push(prodList[i]); //test code
+			//console.log(prodList[i].name);
+
+			var newProd=shoppingCart[shoppingCart.length-1];
+
+			$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+newProd.pic+"><div class='caption'><h4 class='pull-right'>"+newProd.price+"</h4><h4>"+newProd.name+"</h4></div><button onclick='toDelete("+'"'+newProd.name+'"'+"); $(this).parent().remove()';><span class='cart-item-close'>X</span></button></div></div>");
+		}
+	});
+
+	$(".prodDisplay .overlay button").click(function(e){
+		e.preventDefault();
+			
+		var i=$(this).closest(".overlay").siblings("p.prodIndex").html();
+		//console.log(i);
 		shoppingCart.push(prodList[i]); //test code
 		//console.log(prodList[i].name);
 
 		var newProd=shoppingCart[shoppingCart.length-1];
 
-		$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+newProd.pic+"><div class='caption'><h4 class='pull-right'>"+newProd.price+"</h4><h4>"+newProd.name+"</h4></div><button onclick='toDelete("+'"'+newProd.name+'"'+"); $(this).parent().remove()';><span class='cart-item-close'>X</span></button></div></div>");
+			$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+newProd.pic+"><div class='caption'><h4 class='pull-right'>"+newProd.price+"</h4><h4>"+newProd.name+"</h4></div><button onclick='toDelete("+'"'+newProd.name+'"'+"); $(this).parent().remove()';><span class='cart-item-close'>X</span></button></div></div>");
 	});
 
 	//delay effect is not working
