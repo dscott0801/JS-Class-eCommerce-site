@@ -1,11 +1,14 @@
 /* main css file */
-
+* {
+	transition: 5s;
+	-wedkit-transition: 5s;
+	-moz-transition: 5s;
+}
 
 /******************
 	SHOPPING CART
 ******************/
 .shopping-cart {
-	height: 300px;
 	background-color: gray;
 	padding: 30px;
 	margin: 0 0 30px;
@@ -40,7 +43,7 @@
 	height: auto;
 }
 
-.cart-item-close {
+button .cart-item-close {
 	position: absolute;
 	top: -5px;
 	right: 5px;
@@ -55,7 +58,13 @@
 	font-weight: bold;
 }
 
+.shopping-cart-collapse img{
+	width: 100%;
+}
 
+.hidden{
+	visibility: hidden;
+}
 
 /******************
 	CAROUSEL
