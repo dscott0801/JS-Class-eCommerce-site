@@ -63,7 +63,7 @@ $(document).ready(function(){
 
 		var newProd=shoppingCart[shoppingCart.length-1];
 
-		$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+newProd.pic+"><div class='caption'><h4 class='pull-right'>"+newProd.price+"</h4><h4>"+newProd.name+"</h4></div><button onclick='toDelete("+'"'+newProd.name+'"'+"); $(this).parent().remove()';><span class='cart-item-close'>X</span></button></div></div>");
+		$("#cartProd .row").append("<div class='col-sm-4 col-lg-4 col-md-4 cart-item'><div class='thumbnail'><img src="+newProd.pic+"><div class='caption'><h4 class='pull-right'>"+newProd.price+"</h4><h4>"+newProd.name+"</h4></div><button onclick='toDelete("+'"'+newProd.name+'"'+"); $(this).parent().parent().remove()';><span class='cart-item-close'>X</span></button></div></div>");
 	});
 
 	//delay effect is not working
@@ -71,12 +71,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		if ($(".shopping-cart-expand").hasClass("expanded")){
 			$(".shopping-cart-expand").attr("src", "img/arrowDown.png");
-			$(".cartInner").toggleClass("hidden").delay(1000);
 		} else {
 			$(".shopping-cart-expand").attr("src", "img/arrowUp.png");
-			$(".cartInner").toggleClass("hidden").delay(1000);
 		}
-		$(".shopping-cart-expand").toggleClass("expanded").delay(1000);
+		$(".cartInner").slideToggle("slow");
+		$(".shopping-cart-expand").toggleClass("expanded");
 	});
 
 	$(".clearAll").click(function(e){
