@@ -71,7 +71,7 @@ $(document).ready(function(){
 //login
 
 $('#toggle-in').click(function(){
-  $('#login').toggle();
+  $('.login').toggle();
 });
 
 $('#toggle-in').click(function(){
@@ -79,7 +79,7 @@ $('#toggle-in').click(function(){
 });
 
 $('#close').click(function(){
-  $('#login').toggle();
+  $('.login').toggle();
 });
 
 $('#close').click(function(){
